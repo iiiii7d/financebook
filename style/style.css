@@ -6,18 +6,20 @@ body {
 }
 
 nav {
+  width: 50px;
+  height: 100vh;
   margin: 0;
-  width: 20vw;
+  padding: 0;
   background-color: #bbb;
   display: block;
   float: left;
+  text-align: center;
 }
 
 nav > a {
-  width: calc(100% - 15px);
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin: 0;
+  width: calc(100% - 30px);
+  padding: 15px;
   color: black;
   display: inline-block;
 }
@@ -28,5 +30,5 @@ nav > a:hover{
 header {
   display: block;
   float: left;
-  padding: 15px
+  padding: 15px;
 }
