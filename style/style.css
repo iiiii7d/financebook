@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}
+
+nav {
+  margin: 0;
+  width: 20vw;
+  background-color: #bbb;
+  display: block;
+  float: left;
+}
+
+nav > a {
+  width: calc(100% - 15px);
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: black;
+  display: inline-block;
+}
+nav > a:hover{
+  background-color: #999;
+}
+
+header {
+  display: block;
+  float: left;
+  padding: 15px
+}
