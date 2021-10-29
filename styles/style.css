@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}
+
+nav {
+  width: fit-content;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #bbb;
+  display: block;
+  float: left;
+  text-align: center;
+}
+
+nav.selected {
+  text-align: left;
+}
+
+nav > div {
+  margin: 0;
+  width: calc(100% - 30px);
+  padding: 15px;
+  color: black;
+  display: inline-block;
+}
+nav > div:hover {
+  background-color: #999;
+  cursor: pointer;
+}
+nav > div:active {
+  background-color: #777;
+}
+
+nav > div > span {
+  padding: 0px 0px 0px 10px;
+  display: none;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+nav.selected > div > span {
+  display: inline-block;
+}
+
+header {
+  display: block;
+  float: left;
+  padding: 15px;
+  height: 20px;
+  background-color: #aaa;
+  display:none;
+}
+
+header * {
+  display:none;
+}
+
+header > div {
+  width: 10px;
+  height: 10px;
+  padding: 15px;
+  display: block;
+  float: left;
+}
+
+header > div > b {
+  padding: 15px;
+  display: block;
+  float: left;
+}
+
+hr {
+  margin: 0px;
+}
