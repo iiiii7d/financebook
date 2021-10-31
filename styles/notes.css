@@ -1,0 +1,34 @@
+main.page-notes > div {
+  border: 2px solid #aaa;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  border-radius: 15px;
+  float: left;
+}
+
+main.page-notes > div > span.modifieddate, main.page-notes > div > span.createddate {
+  font-style: italic;
+  color: #555;
+}
+
+main.page-notes > div > span.title {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+main.page-notes > div > i.fas.fa-times {
+  float: right;
+  color: #aaa;
+}
+main.page-notes > div > i.fas.fa-times::before {
+  padding: 0px 2px;
+}
+main.page-notes > div > i.fas.fa-times:hover::before {
+  color: red;
+}
+main.page-notes > div > i.fas.fa-times:active::before {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+}

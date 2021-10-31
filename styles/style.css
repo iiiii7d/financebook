@@ -86,3 +86,6 @@ header > span#pagetitle {
   padding: 10px;
 }
 
+main {
+  margin: 15px;
+}

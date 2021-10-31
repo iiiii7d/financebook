@@ -1,7 +1,3 @@
-main.page-players {
-  margin: 15px;
-}
-
 main.page-players > div {
   border: 2px solid #aaa;
   margin: 5px;
@@ -31,22 +27,6 @@ main.page-players > div > span.money {
 
 main.page-players > div > span.dir {
   font-style: italic;
-}
-
-main.page-players > div > i.fas.fa-times {
-  float: right;
-  color: #aaa;
-}
-main.page-players > div > i.fas.fa-times::before {
-  padding: 0px 2px;
-}
-main.page-players > div > i.fas.fa-times:hover::before {
-  color: red;
-}
-main.page-players > div > i.fas.fa-times:active::before {
-  color: white;
-  background-color: red;
-  border-radius: 5px;
 }
 
 main.page-players > div > hr {

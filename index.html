@@ -8,28 +8,30 @@
     <meta name="description" content="for DNAmaster10">
     <link rel="icon" type="image/png" href="img/favicon.png">
 
+    <script src="https://unpkg.com/jquery/dist/jquery.js"></script>
     <script src="https://kit.fontawesome.com/9fe3008556.js" crossorigin="anonymous"></script>
 
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
     <link href="styles/players.css" rel="stylesheet" type="text/css" />
+    <link href="styles/records.css" rel="stylesheet" type="text/css" />
+    <link href="styles/notes.css" rel="stylesheet" type="text/css" />
 
     <script defer src="scripts/index.js"></script>
   </head>
   <body>
     <nav onmouseleave="toggleMenu(false)">
-      <div onclick="toggleMenu(true)"><i class="fas fa-bars"></i><span><b>FinanceBook</b></span></div><br>
-      <div onclick=""><i class="fas fa-users"></i><span>Players</span></div><br>
-      <div onclick=""><i class="fas fa-money-check"></i><span>Records</span></div><br>
-      <div onclick=""><i class="fas fa-sticky-note"></i><span>Notes</span></div><hr>
+      <div onclick="toggleMenu(true)"><i class="fas fa-bars"></i><span><b>Finance Book</b></span></div><br>
+      <div onclick="loadPage('players')"><i class="fas fa-users"></i><span>Players</span></div><br>
+      <div onclick="loadPage('records')"><i class="fas fa-money-check"></i><span>Records</span></div><br>
+      <div onclick="loadPage('notes')"><i class="fas fa-sticky-note"></i><span>Notes</span></div><hr>
     </nav>
     <header>
       <div>
         <b>Servers:</b>
         <div>a</div><div>i</div>
       </div><br><br><br>
-      <span id="pagetitle">Players</span>
+      <span id="pagetitle"></span>
     </header>
-    <main class="page-records">
-    </main>
+    <main class=""></main>
   </body>
 </html>
