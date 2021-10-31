@@ -3,11 +3,12 @@
 body {
   margin: 0;
   font-family: 'Exo 2', sans-serif;
+  height: 100vh;
 }
 
 nav {
   width: fit-content;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #bbb;
@@ -49,33 +50,39 @@ nav.selected > div > span {
   display: inline-block;
 }
 
-header {
-  display: block;
-  float: left;
-  padding: 15px;
-  height: 20px;
-  background-color: #aaa;
-  display:none;
+nav > hr {
+  margin: 0px;
 }
 
-header * {
-  display:none;
+header {
+  background-color: #eee;
+  padding: 0px 0px 10px 0px;
 }
 
 header > div {
-  width: 10px;
-  height: 10px;
-  padding: 15px;
-  display: block;
+  display: flex;
   float: left;
+  padding: 5px;
+  height: fit-content;
+  background-color: #aaa;
+}
+
+header > div > div {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  display: inline-block;
+  background-color: red;
 }
 
 header > div > b {
-  padding: 15px;
-  display: block;
-  float: left;
+  -ms-transform: translateY(25%);
+  transform: translateY(25%);
 }
 
-hr {
-  margin: 0px;
+header > span#pagetitle {
+  font-size: 3em;
+  font-weight: bold;
+  padding: 10px;
 }
+

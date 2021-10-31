@@ -1,0 +1,54 @@
+main.page-players {
+  margin: 15px;
+}
+
+main.page-players > div {
+  border: 2px solid #aaa;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  border-radius: 15px;
+  float: left;
+}
+
+main.page-players > div > div.img {
+  width: 2em;
+  height: 2em;
+  background-color: red;
+  display: inline-block;
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+}
+
+main.page-players > div > span.name {
+  font-size: 2em;
+}
+
+main.page-players > div > span.money {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+main.page-players > div > span.dir {
+  font-style: italic;
+}
+
+main.page-players > div > i.fas.fa-times {
+  float: right;
+  color: #aaa;
+}
+main.page-players > div > i.fas.fa-times::before {
+  padding: 0px 2px;
+}
+main.page-players > div > i.fas.fa-times:hover::before {
+  color: red;
+}
+main.page-players > div > i.fas.fa-times:active::before {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+}
+
+main.page-players > div > hr {
+  border: 1px solid #aaa;
+}
