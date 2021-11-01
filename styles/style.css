@@ -3,22 +3,25 @@
 body {
   margin: 0;
   font-family: 'Exo 2', sans-serif;
-  height: 100vh;
 }
 
 nav {
   width: fit-content;
-  height: 100%;
+  min-width: 50px;
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #bbb;
   display: block;
   float: left;
   text-align: center;
+  position: fixed;
+  z-index: 1;
 }
 
 nav.selected {
   text-align: left;
+  box-shadow: 5px 0px 5px #555;
 }
 
 nav > div {
@@ -57,6 +60,8 @@ nav > hr {
 header {
   background-color: #eee;
   padding: 0px 0px 10px 0px;
+  transform: translateX(50px);
+  width: calc(100vw - 50px);
 }
 
 header > div {
@@ -65,6 +70,7 @@ header > div {
   padding: 5px;
   height: fit-content;
   background-color: #aaa;
+  width: calc(100vw - 60px);
 }
 
 header > div > div {
@@ -88,4 +94,10 @@ header > span#pagetitle {
 
 main {
   margin: 15px;
+  transform: translateX(50px);
+  max-width: calc(100vw - 70px);
+}
+
+main * {
+  max-width: calc(100vw - 70px);
 }
