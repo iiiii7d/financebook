@@ -13,7 +13,9 @@ const PageTitles = {
     'notes': 'Notes'
 }
 const PageFunctions = {
-    'players': PlayersFunctions
+    'players': PlayersFunctions,
+    'records': RecordsFunctions,
+    'notes': NotesFunctions
 }
 
 function getData() {
@@ -30,7 +32,7 @@ function loadPage(page) {
     });
 }
 
-if (!('server' in localStorage)) {
+if (true) {
     localStorage['server'] = LZString.compress(JSON.stringify({
         players: {
             "foobar": 100,
@@ -38,22 +40,27 @@ if (!('server' in localStorage)) {
         },
         records: [
             {
+                type: "Bill",
                 name: "foobar",
                 money: 100,
-                date: new Date()
+                date: new Date(),
+                description: "abc"
             },
             {
+                type: "Transaction",
                 name: "foobar2",
                 money: -100,
-                date: new Date()
+                date: new Date(),
+                description: "xyz"
             }
         ],
-        notes: [
-            {
-                date: new Date(),
+        notes: {
+            "a": {
+                createddate: new Date(),
+                modifieddate: new Date(),
                 title: "title",
                 content: "lorem ipsum dolor"
             }
-        ]
+        }
     }))
 }
