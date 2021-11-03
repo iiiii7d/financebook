@@ -13,4 +13,4 @@ const PlayersFunctions = {
     });
     return ele.innerHTML;
   }
-}
+};
