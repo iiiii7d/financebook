@@ -11,12 +11,14 @@ function toggleMenu(b) {
 const PageTitles = {
     'players': 'Players',
     'records': 'Records',
-    'notes': 'Notes'
+    'notes': 'Notes',
+    'add': 'Add Bill / Transaction Record'
 };
 const PageFunctions = {
     'players': PlayersFunctions,
     'records': RecordsFunctions,
-    'notes': NotesFunctions
+    'notes': NotesFunctions,
+    'add': AddFunctions
 };
 
 function getData() {
