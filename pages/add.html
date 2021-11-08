@@ -1,4 +1,31 @@
 <span style="font-size: 2em;">Creating a
-  <span class="type-selector selected" onclick="AddFunctions.toggleMode('bill')">bill</span>
-  <span class="type-selector" onclick="AddFunctions.toggleMode('transaction')">transaction</span>
-</span>
+  <span class="type-selector selected" onclick="AddFunctions.toggleTypeMode('bill')">bill</span>
+  <span class="type-selector" onclick="AddFunctions.toggleTypeMode('transaction')">transaction</span>
+</span><br><br>
+
+Player: <span contenteditable id="name" placeholder="Player..."></span>
+<i class="fas fa-pen"></i><br><br>
+
+Description: <span contenteditable id="description" placeholder="Description..."></span>
+<i class="fas fa-pen"></i><br><br>
+
+Money: <span contenteditable id="money" placeholder="???"></span>
+<i class="fas fa-pen"></i><br><br>
+
+Direction:
+<span class="dir-selector selected" onclick="AddFunctions.toggleDirMode('me → player')">me → player</span>
+<span class="dir-selector" onclick="AddFunctions.toggleDirMode('player → me')">player → me</span><br><br>
+
+<button onclick="AddFunctions.addEntry()"><i class="fas fa-plus"></i>  Add</button><br>
+
+<script>
+  document.querySelector("#money").addEventListener('blur', () => {
+    console.log("adadsff");
+    document.querySelector("#money").innerHTML = document.querySelector("#money").innerHTML.replace(/(?:(?<=^.+)-|[^\d-\.]|(?<=\..*)\.)/gm, "")
+  });
+  document.querySelectorAll("[contenteditable]").forEach(element => {
+    element.parentElement.onclick = (e) => {
+      e.target.focus();
+    };
+  });
+</script>

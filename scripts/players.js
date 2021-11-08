@@ -11,6 +11,7 @@ const PlayersFunctions = {
       box.querySelector(".dir").innerHTML = "owed by "+(amt<0 ? "them" : "me");
       ele.appendChild(box);
     });
+    
     return ele.innerHTML;
   }
 };
