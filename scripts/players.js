@@ -9,6 +9,7 @@ const PlayersFunctions = {
       box.querySelector(".name").innerHTML = player;
       box.querySelector(".money").innerHTML = Math.abs(amt);
       box.querySelector(".dir").innerHTML = "owed by "+(amt<0 ? "them" : "me");
+      box.querySelector("img").setAttribute('src', getData().icons[player]);
       ele.appendChild(box);
     });
     

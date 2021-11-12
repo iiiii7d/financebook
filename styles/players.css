@@ -7,13 +7,13 @@ main.page-players > div {
   float: left;
 }
 
-main.page-players > div > div.img {
+main.page-players > div > img {
   width: 2em;
   height: 2em;
   background-color: red;
   display: inline-block;
-  -ms-transform: translateY(-30%);
-  transform: translateY(-30%);
+  -ms-transform: translateY(15%);
+  transform: translateY(15%);
 }
 
 main.page-players > div > span.name {

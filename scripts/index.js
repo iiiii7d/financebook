@@ -28,13 +28,14 @@ function saveData(json) {
     localStorage[server] = LZString.compress(JSON.stringify(json));
 }
 
-function loadPage(page) {
+function loadPage(page, func, param) {
     $("#pagetitle")[0].innerHTML = PageTitles[page];
     $("main")[0].setAttribute("class", "page-"+page);
     $("main").html("<b>Loading...</b>");
     $.get(`pages/${page}.html`, data => {
         $('main').html(PageFunctions[page].init(data));
         $('nav')[0].style.height = $('html').height();
+        if (func) func(param);
     });
 }
 
@@ -67,6 +68,26 @@ if (true) {
                 title: "title",
                 content: "lorem ipsum dolor"
             }
+        },
+        icons: {
+            "foobar": "",
+            "foobar2": ""
         }
     }));
+}
+
+function recalc() {
+    let data = getData();
+    let players = {}
+    Object.values(data.records).forEach(info => {
+        if (info.type == "Bill+Transaction") return;
+        if (!(info.name in players)) players[info.name] = 0
+        let prevMoney = players[info.name]
+        players[info.name] = Math.round((players[info.name] + info.money)*1000)/1000
+        if (info.type == "Transaction" &&
+        ((prevMoney < 0 && players[info.name] > 0) ||
+        (prevMoney > 0 && players[info.name] < 0))) players[info.name] = 0
+    });
+    data.players = players;
+    saveData(data);
 }

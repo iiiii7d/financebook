@@ -12,12 +12,12 @@ const RecordsFunctions = {
       box.querySelector(".money").innerHTML = Math.abs(info.money);
       box.querySelector(".description").innerHTML = info.description;
       box.querySelector(".date").innerHTML = new Date(info.date).toLocaleString();
-      box.querySelector(".fas.fa-times").setAttribute("onclick", `RecordsFunctions.deleteNote('${index}')`);
+      box.querySelector(".fas.fa-times").setAttribute("onclick", `RecordsFunctions.deleteRecord('${index}')`);
       ele.appendChild(box);
     });
     return ele.innerHTML;
   },
-  deleteNote: (index) => {
+  deleteRecord: (index) => {
     let info = getData().records[index];
     if (!confirm("Are you sure you want to delete this record:\n" +
     `Type: ${info.type}\n` +
@@ -30,5 +30,8 @@ const RecordsFunctions = {
     delete newLS.records[index];
     saveData(newLS);
     loadPage("records");
+  },
+  editRecord: (index) => {
+    loadPage("edit", EditFunctions.fillData, index);
   }
 };

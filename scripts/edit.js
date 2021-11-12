@@ -1,14 +1,21 @@
-const AddFunctions = {
+const EditFunctions = {
   init: (data) => {
     let ele = document.createElement("main");
     ele.innerHTML = data;
     return ele.innerHTML;
   },
-  toggleTypeMode: (mode) => {
-    Array.from($("span.type-selector")).forEach(btn => {
-      if (btn.innerHTML == mode) btn.classList.add("selected");
-      else btn.classList.remove("selected");
-    });
+  fillData: (id) => {
+    let info = getData().records[id];
+    $("#id")[0].innerHTML = id;
+    $("#date")[0].innerHTML = info.date;
+    $("#type")[0].innerHTML = info.type == 'Bill' ? "bill" : "transaction";
+    $("#name")[0].innerHTML = info.name;
+    $("#description")[0].innerHTML = info.description;
+    $("#money")[0].innerHTML = Math.abs(info.money);
+    if (info.money < 0) {
+      $(".dir-selector")[0].classList.remove("selected");
+      $(".dir-selector")[1].classList.add("selected");
+    }
   },
   toggleDirMode: (mode) => {
     Array.from($("span.dir-selector")).forEach(btn => {
@@ -18,12 +25,11 @@ const AddFunctions = {
   },
   addEntry: () => {
     let entry = {
-      type: $("span.type-selector.selected")[0].innerHTML == "bill" ? "Bill" : "transaction" ? "Transaction" : "Bill+Transactionn",
+      type: $("#type")[0].innerHTML == "bill" ? "Bill" : "Transaction",
       name: $("#name")[0].innerHTML,
       money: parseFloat($("#money")[0].innerHTML),
-      date: new Date().getTime(),
-      description: $("#description")[0].innerHTML,
-      img: ""
+      date: parseInt($("#date")[0].innerHTML),
+      description: $("#description")[0].innerHTML
     };
     if (entry.name.trim() == "") {
       alert("'Player' field is empty");
@@ -43,6 +49,11 @@ const AddFunctions = {
       let data = getData();
       data.icons[entry.name] = `https://crafatar.com/avatars/${uuid}?overlay`;
       data.records[entry.date] = entry;
+      if ($("span.type-selector.selected")[0].innerHTML == "bill+transaction") {
+        entry.type == "Bill"
+        entry.date = new Date().getTime();
+        data.records[entry.date] = entry;
+      }
       saveData(data);
       recalc();
       loadPage("records");

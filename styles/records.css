@@ -17,11 +17,17 @@ main.page-records > div > span.date, main.page-records > div > span.type {
   color: #555;
 }
 
-main.page-records > div > i.fas.fa-times {
+main.page-records > div > i.fas.fa-times, main.page-records > div > i.fas.fa-pen {
   float: right;
   color: #aaa;
 }
-main.page-records > div > i.fas.fa-times::before {
+main.page-records > div > i.fas.fa-pen {
+  float: right;
+  color: #aaa;
+  font-size: 12px;
+  transform: translateY(2px);
+}
+main.page-records > div > i.fas.fa-times::before, main.page-records > div > i.fas.fa-pen::before {
   padding: 0px 2px;
 }
 main.page-records > div > i.fas.fa-times:hover::before {
@@ -30,5 +36,13 @@ main.page-records > div > i.fas.fa-times:hover::before {
 main.page-records > div > i.fas.fa-times:active::before {
   color: white;
   background-color: red;
+  border-radius: 5px;
+}
+main.page-records > div > i.fas.fa-pen:hover::before {
+  color: #08c;
+}
+main.page-records > div > i.fas.fa-pen:active::before {
+  color: white;
+  background-color: #08c;
   border-radius: 5px;
 }

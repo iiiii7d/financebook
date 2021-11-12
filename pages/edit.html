@@ -1,7 +1,8 @@
-<span style="font-size: 2em;">Creating a
-  <span class="type-selector selected" onclick="AddFunctions.toggleTypeMode('bill')">bill</span>
-  <span class="type-selector" onclick="AddFunctions.toggleTypeMode('transaction')">transaction</span>
-  <span class="type-selector" onclick="AddFunctions.toggleTypeMode('bill+transaction')">bill+transaction</span>
+<span hidden id="id"></span>
+<span hidden id="edit"></span>
+
+<span style="font-size: 2em;">Editing a
+  <span id="type" class="type-selector selected">bill</span>
 </span><br><br>
 
 Player: <span contenteditable id="name" placeholder="Player..."></span>
@@ -14,10 +15,10 @@ Money: <span contenteditable id="money" placeholder="???"></span>
 <i class="fas fa-pen"></i><br><br>
 
 Direction:
-<span class="dir-selector selected" onclick="AddFunctions.toggleDirMode('me → player')">me → player</span>
-<span class="dir-selector" onclick="AddFunctions.toggleDirMode('player → me')">player → me</span><br><br>
+<span class="dir-selector selected" onclick="EditFunctions.toggleDirMode('me → player')">me → player</span>
+<span class="dir-selector" onclick="EditFunctions.toggleDirMode('player → me')">player → me</span><br><br>
 
-<button onclick="AddFunctions.addEntry()"><i class="fas fa-plus"></i>  Add</button><br>
+<button onclick="EditFunctions.addEntry()"><i class="fas fa-plus"></i>  Save chanes</button><br>
 
 <script>
   document.querySelector("#money").addEventListener('blur', () => {
