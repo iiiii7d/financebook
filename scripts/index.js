@@ -13,14 +13,16 @@ const PageTitles = {
     'records': 'Records',
     'notes': 'Notes',
     'add': 'Add Bill / Transaction Record',
-    'edit': 'Edit Bill / Transaction Record'
+    'edit': 'Edit Bill / Transaction Record',
+    'servers': 'Servers'
 };
 const PageFunctions = {
     'players': PlayersFunctions,
     'records': RecordsFunctions,
     'notes': NotesFunctions,
     'add': AddFunctions,
-    'edit': EditFunctions
+    'edit': EditFunctions,
+    'servers': ServersFunctions
 };
 
 function getData() {
