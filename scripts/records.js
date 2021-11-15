@@ -13,6 +13,7 @@ const RecordsFunctions = {
       box.querySelector(".description").innerHTML = info.description;
       box.querySelector(".date").innerHTML = new Date(info.date).toLocaleString();
       box.querySelector(".fas.fa-times").setAttribute("onclick", `RecordsFunctions.deleteRecord('${index}')`);
+      box.querySelector(".fas.fa-pen").setAttribute("onclick", `RecordsFunctions.editRecord('${index}')`)
       ele.appendChild(box);
     });
     return ele.innerHTML;

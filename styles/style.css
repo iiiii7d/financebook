@@ -101,3 +101,22 @@ main {
 main * {
   max-width: calc(100vw - 70px);
 }
+
+
+[contenteditable]:hover {
+  text-decoration: underline;
+  cursor: text;
+}
+[contenteditable]:focus {
+  text-decoration: underline;
+}
+[contenteditable] + .fas {
+  visibility: hidden !important;
+}
+[contenteditable]:hover + .fas {
+  visibility: visible !important;
+}
+[contenteditable]:empty::before {
+  content: attr(placeholder);
+  color: grey;
+}

@@ -17,12 +17,21 @@ main.page-notes > div > span.title {
   font-size: 2em;
 }
 
-main.page-notes > div > i.fas.fa-times {
+main.page-notes > div > i.fas.fa-times, main.page-records > div > i.fas.fa-pen.edit {
   float: right;
   color: #aaa;
 }
+main.page-notes > div > i.fas.fa-pen.edit {
+  float: right;
+  color: #aaa;
+  font-size: 12px;
+  transform: translateY(2px);
+}
 main.page-notes > div > i.fas.fa-times::before {
   padding: 0px 2px;
+}
+main.page-notes > div > i.fas.fa-pen.edit::before {
+  padding: 2px;
 }
 main.page-notes > div > i.fas.fa-times:hover::before {
   color: red;
@@ -31,4 +40,16 @@ main.page-notes > div > i.fas.fa-times:active::before {
   color: white;
   background-color: red;
   border-radius: 5px;
+}
+main.page-notes > div > i.fas.fa-pen.edit:hover::before {
+  color: #08c;
+}
+main.page-notes > div > i.fas.fa-pen.edit:active::before {
+  color: white;
+  background-color: #08c;
+  border-radius: 5px;
+}
+
+main.page-notes > div > i.fas.fa-pen.ce {
+  visibility: hidden;
 }

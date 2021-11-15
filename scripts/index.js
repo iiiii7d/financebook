@@ -12,13 +12,15 @@ const PageTitles = {
     'players': 'Players',
     'records': 'Records',
     'notes': 'Notes',
-    'add': 'Add Bill / Transaction Record'
+    'add': 'Add Bill / Transaction Record',
+    'edit': 'Edit Bill / Transaction Record'
 };
 const PageFunctions = {
     'players': PlayersFunctions,
     'records': RecordsFunctions,
     'notes': NotesFunctions,
-    'add': AddFunctions
+    'add': AddFunctions,
+    'edit': EditFunctions
 };
 
 function getData() {
@@ -83,10 +85,13 @@ function recalc() {
         if (info.type == "Bill+Transaction") return;
         if (!(info.name in players)) players[info.name] = 0
         let prevMoney = players[info.name]
-        players[info.name] = Math.round((players[info.name] + info.money)*1000)/1000
+        if (info.type == "Transaction") players[info.name] = Math.round((players[info.name] - info.money)*1000)/1000
+        else players[info.name] = Math.round((players[info.name] + info.money)*1000)/1000
         if (info.type == "Transaction" &&
         ((prevMoney < 0 && players[info.name] > 0) ||
-        (prevMoney > 0 && players[info.name] < 0))) players[info.name] = 0
+        (prevMoney > 0 && players[info.name] < 0) ||
+        prevMoney == 0)) players[info.name] = 0
+        if (players[info.name] == 0) delete players[info.name];
     });
     data.players = players;
     saveData(data);

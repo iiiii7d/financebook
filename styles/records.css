@@ -27,8 +27,11 @@ main.page-records > div > i.fas.fa-pen {
   font-size: 12px;
   transform: translateY(2px);
 }
-main.page-records > div > i.fas.fa-times::before, main.page-records > div > i.fas.fa-pen::before {
+main.page-records > div > i.fas.fa-times::before {
   padding: 0px 2px;
+}
+main.page-records > div > i.fas.fa-pen::before {
+  padding: 2px;
 }
 main.page-records > div > i.fas.fa-times:hover::before {
   color: red;

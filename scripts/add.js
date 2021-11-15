@@ -18,12 +18,11 @@ const AddFunctions = {
   },
   addEntry: () => {
     let entry = {
-      type: $("span.type-selector.selected")[0].innerHTML == "bill" ? "Bill" : "transaction" ? "Transaction" : "Bill+Transactionn",
+      type: $("span.type-selector.selected")[0].innerHTML == "bill" ? "Bill" : "transaction" ? "Transaction" : "Bill+Transaction",
       name: $("#name")[0].innerHTML,
       money: parseFloat($("#money")[0].innerHTML),
       date: new Date().getTime(),
       description: $("#description")[0].innerHTML,
-      img: ""
     };
     if (entry.name.trim() == "") {
       alert("'Player' field is empty");

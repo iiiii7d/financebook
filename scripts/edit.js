@@ -8,7 +8,7 @@ const EditFunctions = {
     let info = getData().records[id];
     $("#id")[0].innerHTML = id;
     $("#date")[0].innerHTML = info.date;
-    $("#type")[0].innerHTML = info.type == 'Bill' ? "bill" : "transaction";
+    $("#type")[0].innerHTML = info.type == 'Bill' ? "bill" : "Transaction" ? "transaction" : "bill+transaction";
     $("#name")[0].innerHTML = info.name;
     $("#description")[0].innerHTML = info.description;
     $("#money")[0].innerHTML = Math.abs(info.money);
@@ -25,7 +25,7 @@ const EditFunctions = {
   },
   addEntry: () => {
     let entry = {
-      type: $("#type")[0].innerHTML == "bill" ? "Bill" : "Transaction",
+      type: $("#type")[0].innerHTML == "bill" ? "Bill" : "transaction" ? "Transaction" : "Bill+Transaction",
       name: $("#name")[0].innerHTML,
       money: parseFloat($("#money")[0].innerHTML),
       date: parseInt($("#date")[0].innerHTML),
@@ -48,12 +48,7 @@ const EditFunctions = {
 	    let uuid = res.contents == "" ? "" : JSON.parse(res.contents).id;
       let data = getData();
       data.icons[entry.name] = `https://crafatar.com/avatars/${uuid}?overlay`;
-      data.records[entry.date] = entry;
-      if ($("span.type-selector.selected")[0].innerHTML == "bill+transaction") {
-        entry.type == "Bill"
-        entry.date = new Date().getTime();
-        data.records[entry.date] = entry;
-      }
+      data.records[$("#id")[0].innerHTML] = entry;
       saveData(data);
       recalc();
       loadPage("records");
