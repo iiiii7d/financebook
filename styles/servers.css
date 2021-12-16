@@ -1,3 +1,18 @@
 main.page-servers > div > span.name, main.page-servers > div > i.fas.fa-pen {
   font-size: 2em;
 }
+
+main.page-servers > div > i.fas.fa-times {  
+  color: #aaa;
+}
+main.page-servers > div > i.fas.fa-times::before {
+  padding: 0px 2px;
+}
+main.page-servers > div > i.fas.fa-times:hover::before {
+  color: red;
+}
+main.page-servers > div > i.fas.fa-times:active::before {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+}

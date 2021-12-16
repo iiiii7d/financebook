@@ -73,12 +73,33 @@ header > div {
   width: calc(100vw - 60px);
 }
 
-header > div > div {
+#serverlist > div {
   width: 35px;
   height: 35px;
   margin: 5px;
-  display: inline-block;
+  display: inline-table;
   background-color: red;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+#serverlist > div:hover {
+  box-shadow: 3px 3px 3px #555;
+  cursor: pointer;
+}
+#serverlist > div:active {
+  background-color: #08c !important;
+}
+
+#serverlist > div > span {
+  display:table-cell;
+  vertical-align:middle;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 header > div > b {

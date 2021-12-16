@@ -25,6 +25,8 @@
     <script defer src="scripts/add.js"></script>
     <script defer src="scripts/edit.js"></script>
     <script defer src="scripts/servers.js"></script>
+    <script defer src="scripts/about.js"></script>
+    <script defer src="scripts/io.js"></script>
     <script defer src="scripts/index.js"></script>
   </head>
   <body onload="loadPage('servers')">
@@ -33,15 +35,20 @@
       <div onclick="loadPage('players')"><i class="fas fa-users"></i><span>Players</span></div><br>
       <div onclick="loadPage('records')"><i class="fas fa-money-check"></i><span>Records</span></div><br>
       <div onclick="loadPage('notes')"><i class="fas fa-sticky-note"></i><span>Notes</span></div><hr>
-      <div onclick="loadPage('servers')"><i class="fas fa-server"></i><span>Servers</span></div>
+      <div onclick="loadPage('servers')"><i class="fas fa-server"></i><span>Servers</span></div><br>
+      <div onclick="exportData()"><i class="fas fa-file-export"></i><span>Export Data</span></div><br>
+      <div onclick="$('#importer').click()"><i class="fas fa-file-import"></i><span>Import Data</span></div><hr>
+      <div onclick="loadPage('about')"><i class="fas fa-info"></i><span>About</span></div>
     </nav>
     <header>
       <div>
         <b>Servers:</b>
-        <div>a</div><div>i</div>
+        <div id="serverlist"></div>
       </div><br><br><br>
       <span id="pagetitle"></span>
     </header>
     <main class=""></main>
+    <a id="downloader" style="display:none"></a>
+    <input type="file" name="importer" id="importer" accept=".fnb" style="display:none" oninput="importData()">
   </body>
 </html>
