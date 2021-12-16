@@ -82,20 +82,20 @@ if (true) {
 
 function recalc() {
     let data = getData();
-    let players = {}
+    let players = {};
     Object.values(data.records).forEach(info => {
         if (info.type == "Bill+Transaction") return;
-        if (!(info.name in players)) players[info.name] = 0
-        let prevMoney = players[info.name]
-        if (info.type == "Transaction") players[info.name] = Math.round((players[info.name] - info.money)*1000)/1000
-        else players[info.name] = Math.round((players[info.name] + info.money)*1000)/1000
+        if (!(info.name in players)) players[info.name] = 0;
+        let prevMoney = players[info.name];
+        if (info.type == "Transaction") players[info.name] = Math.round((players[info.name] - info.money)*1000)/1000;
+        else players[info.name] = Math.round((players[info.name] + info.money)*1000)/1000;
         if (info.type == "Transaction" &&
         ((prevMoney < 0 && players[info.name] > 0) ||
         (prevMoney > 0 && players[info.name] < 0) ||
-        prevMoney == 0)) players[info.name] = 0
+        prevMoney == 0)) players[info.name] = 0;
         if (players[info.name] == 0) delete players[info.name];
     });
     data.players = players;
     saveData(data);
 }
-recalc()
+recalc();

@@ -4,4 +4,4 @@ const ServersFunctions = {
     ele.innerHTML = data;
     return ele.innerHTML;
   }
-}
+};

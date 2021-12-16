@@ -6,7 +6,7 @@ const NotesFunctions = {
     Object.entries(getData().notes).forEach(([index, info]) => {
       let box = document.createElement("div");
       box.innerHTML = template.innerHTML;
-      box.classList.add("note-"+index)
+      box.classList.add("note-"+index);
       box.querySelector(".createddate").innerHTML = new Date(info.createddate).toLocaleString();
       box.querySelector(".modifieddate").innerHTML = new Date(info.modifieddate).toLocaleString();
       box.querySelector(".title").innerHTML = info.title;
