@@ -98,3 +98,4 @@ function recalc() {
     data.players = players;
     saveData(data);
 }
+recalc()

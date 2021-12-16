@@ -30,6 +30,7 @@ const RecordsFunctions = {
     let newLS = getData();
     delete newLS.records[index];
     saveData(newLS);
+    recalc();
     loadPage("records");
   },
   editRecord: (index) => {
