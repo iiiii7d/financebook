@@ -5,7 +5,7 @@
 
 ## Changelog
 * v1.0 (17/12/21)
-** Added records: bills, transactions, and bills+transactions
-** Added player page
-** Added notes
-** Added server switching
+  * Added records: bills, transactions, and bills+transactions
+  * Added player page
+  * Added notes
+  * Added server switching
