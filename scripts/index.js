@@ -1,3 +1,6 @@
+const Version = "1.0";
+localStorage.financebookVersion = Version;
+
 const DefaultData = {
     players: {},
     records: {},
@@ -124,12 +127,12 @@ function switchServer(name) {
     loadPage(currentPage);
 }
 
-if (!("financebook" in Object.keys(localStorage))) addServerData("default");
+if (!("financebook" in localStorage)) addServerData("default");
 else recalc();
 loadServerList();
 
 
-if (true) // debug
+if (false) // debug
     saveData({
         players: {
             "foobar": 100,

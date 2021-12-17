@@ -27,7 +27,6 @@ const NotesFunctions = {
     box.classList.add("note-"+index);
     box.querySelector(".createddate").innerHTML = new Date().toLocaleString();
     box.querySelector(".modifieddate").innerHTML = new Date().toLocaleString();
-    box.querySelector(".fas.fa-times").setAttribute("onclick", `NotesFunctions.deleteNote('${index}')`);
     box.querySelector(".fas.fa-pen").setAttribute("onclick", `NotesFunctions.openEditing('${index}')`);
     box.querySelector(".save").setAttribute("onclick", `NotesFunctions.saveNote('${index}', \
                                                         $(".note-${index} .title")[0].innerHTML, \
@@ -59,6 +58,7 @@ const NotesFunctions = {
     //Array.from($(`.note-${index} .ce`)).forEach(ele => ele.hidden = true);
     $(`.note-${index} .save`)[0].hidden = true;
     $(`.note-${index} .editdisplay`)[0].hidden = true;
+    $(`.note-${index} .fas.fa-times`)[0].setAttribute("onclick", `NotesFunctions.deleteNote('${index}')`);
   },
   saveNote: (index, title, content) => {
     let data = getData();

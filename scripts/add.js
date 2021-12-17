@@ -35,8 +35,6 @@ const AddFunctions = {
       entry.money = -entry.money;
     }
 
-    console.log(entry);
-
     $.getJSON(`http://api.allorigins.win/get?url=https%3A//api.mojang.com/users/profiles/minecraft/${entry.name}&callback=?`, res => {
 	    let uuid = res.contents == "" ? "" : JSON.parse(res.contents).id;
       let data = getData();

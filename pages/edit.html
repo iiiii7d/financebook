@@ -22,7 +22,6 @@ Direction:
 
 <script>
   document.querySelector("#money").addEventListener('blur', () => {
-    console.log("adadsff");
     document.querySelector("#money").innerHTML = document.querySelector("#money").innerHTML.replace(/(?:(?<=^.+)-|[^\d-\.]|(?<=\..*)\.)/gm, "")
   });
   document.querySelectorAll("[contenteditable]").forEach(element => {
