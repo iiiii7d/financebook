@@ -31,7 +31,7 @@ const PageFunctions = {
 };
 
 var menuExpanded = false;
-var server = Object.keys(getAllData())[0];
+if (!("financebookServer" in localStorage)) localStorage.financebookServer = Object.keys(getAllData())[0];
 function toggleMenu(b) {
     if (!b) {
         $("nav")[0].classList.remove("selected");
@@ -51,11 +51,11 @@ function saveAllData(json) {
 }
 
 function getData(requestedServer) {
-    if (requestedServer === undefined) requestedServer = server;
+    if (requestedServer === undefined) requestedServer = localStorage.financebookServer;
     return getAllData()[requestedServer];
 }
 function saveData(json, requestedServer) {
-    if (requestedServer === undefined) requestedServer = server;
+    if (requestedServer === undefined) requestedServer = localStorage.financebookServer;
     let existingData = getAllData();
     existingData[requestedServer] = json;
     saveAllData(existingData);
@@ -70,7 +70,7 @@ function addServerData(name) {
 function removeServerData(name) {
     let data = getAllData();
     if (name in data) delete data[name];
-    if (server == name) server = Object.keys(getAllData())[0];
+    if (localStorage.financebookServer == name) localStorage.financebookServer = Object.keys(getAllData())[0];
     saveAllData(data);
     loadServerList();
 }
@@ -114,14 +114,14 @@ function loadServerList() {
         ele.style.color = info.fore;
         ele.style.backgroundColor = info.back;
         ele.setAttribute("onclick", `switchServer("${name}")`);
-        if (server == name) ele.style.border = "5px solid #08c";
+        if (localStorage.financebookServer == name) ele.style.border = "5px solid #08c";
         
         serverList[0].appendChild(ele);
     });
 }
 
 function switchServer(name) {
-    server = name;
+    localStorage.financebookServer = name;
     loadServerList();
     currentPage = $("main")[0].classList[0].replace(/^page\-/gm, "");
     loadPage(currentPage);
