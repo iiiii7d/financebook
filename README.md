@@ -1,5 +1,5 @@
 # financebook
-**Financebook** is a web application made by __7d for DNAMaster10 to digitally keep finance records on Minecraft servers.
+**Financebook** is a web application made by __7d for DNAmaster10 to digitally keep finance records on Minecraft servers.
 
 ## Current version: v1.0
 
