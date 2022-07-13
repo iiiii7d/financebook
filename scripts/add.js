@@ -35,7 +35,7 @@ const AddFunctions = {
       entry.money = -entry.money;
     }
 
-    $.getJSON(`http://api.allorigins.win/get?url=https%3A//api.mojang.com/users/profiles/minecraft/${entry.name}`, res => {
+    $.getJSON(`https://api.allorigins.win/get?url=https%3A//api.mojang.com/users/profiles/minecraft/${entry.name}`, res => {
 	    let uuid = res.contents == "" ? "" : JSON.parse(res.contents).id;
       let data = getData();
       data.icons[entry.name] = `https://crafatar.com/avatars/${uuid}?overlay`;
